@@ -1,0 +1,114 @@
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+<head> 
+
+<meta charset="UTF-8"> 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+<title>Sign Up</title> 
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> 
+
+<style> 
+
+
+#submit{
+    margin-left: 150px;
+    height: 40px;
+    border: 0px;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: bisque;    
+    margin-left: 125px; border: 0px ;height: 45px;width: 300px;
+    
+}
+#submit:hover{
+    background-color: rgb(243, 212, 174);
+}
+input{
+    margin-left: 70px; border: 0px ;height: 40px;width: 400px; border-radius: 7px; border: 1px rgb(194, 191, 191) solid;
+}
+label{
+    padding-left: 70px;
+}
+
+</style> 
+
+</head> 
+
+<body style="background-color: bisque;"> 
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><h4 style="padding-top: 15px;padding-left: 5px;">Cbit Marketplace</h4></a>
+    </div>
+    <hr>
+<div class="container-fluid" style="background-color: white; margin-top: 50px; width: 600px; padding: 10px;border-radius: 10px; border: 1px rgb(194, 191, 191) solid; box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.1);">
+<form action="/sign_up" method="POST" onsubmit="return validateForm()"> 
+    <h2 style="text-align: center;">Create Account</h2> <br>
+    <label >Your name</label><br>
+    <input type="text" id="name" name="name"  required><br><br>
+    <label >Mobile No.</label><br>
+    <input type="tel" id="mobileno" name="mobileno"  required><br><span id="mobileError" class="error" style="color: red;padding-left: 70px;"></span><br>
+    <label >Roll No.</label><br>
+    <input type="number" id="rollno" name="rollno"  required><br><br>
+    <label >Branch and Section</label><br>
+    <input type="text" id="branchsec" name="branchsec" required><br><br>
+    <label >Email Id</label><br>
+    <input type="email" id="email" name="email"  required><br><span id="emailError" class="error" style="color: red;padding-left: 70px;"></span><br> 
+    <label >Password</label><br>
+    <input type="password" id="password" name="password"  required><br><br> 
+    <label >Verify Password</label><br>
+    <input type="password" id="confirmpassword" name="confirmpassword"  required><br><span id="passwordError" class="error" style="color: red;padding-left: 70px;"></span><br>
+    <a class="text-decoration-none" href="terms_of_use.html" style="color: black;padding-left: 70px;">By signing up, you agree to <a href="terms_of_use.html">Terms of Use</a> and <a href="privacy_policy.html">Privacy Policy</a></a><br><br>
+    <input type="submit" value="Submit" id="submit" name="submit"><br>
+</form><br><br> 
+
+
+
+
+</div>
+<br><br><br><br><br><br><br><br>
+    <footer>
+        <p style="text-align: center; background-color: bisque;padding-top: 15px;padding-bottom: 15px;">&copy Cbit Marketplace</p>
+    </footer>
+    <script>
+        function validateForm() {
+            var isValid = true;
+            var mobileNo = document.getElementById('mobileno').value;
+            var mobileError = document.getElementById('mobileError');
+            if (mobileNo.length !== 9) {
+                mobileError.textContent = 'Mobile number must be 9 digits long.';
+                isValid = false;
+            } else {
+                mobileError.textContent = '';
+            }
+
+            var email = document.getElementById('email').value;
+            var emailError = document.getElementById('emailError');
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                emailError.textContent = 'Please enter a valid email address.';
+                isValid = false;
+            } else {
+                emailError.textContent = '';
+            }
+
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmpassword').value;
+            var passwordError = document.getElementById('passwordError');
+            if (password !== confirmPassword) {
+                passwordError.textContent = 'Passwords do not match.';
+                isValid = false;
+            } else {
+                passwordError.textContent = '';
+            }
+            
+            return isValid;
+        }
+    </script>
+</body> 
+
+</html> 

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Items</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        
+
+        .item {
+            display: none; 
+            text-align: center;
+        }
+
+        .item.active {
+            display: flex; 
+        }
+
+
+         .box{
+            display: flex;
+            background-color:white;
+            cursor: pointer;
+        }
+        .box:hover input{
+            width:300px;
+        }
+        .box input{
+            width: 0;
+            transition: 0.8s;
+            background: transparent;
+        }
+        .mm{
+            display: flex;
+            background:bg-body-tertiary;
+            position: relative;
+            color: bisque;
+            outline: none;
+            animation: animate 3s linear infinite;
+        }
+        @keyframes animate{
+            0%,18%,20%,50.1%,60%,65%,80.1%,90%,92.1%,100%{
+                color: #0e3742;
+                text-shadow: none;
+            }
+            18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
+                color: white;
+                text-shadow: 0 0 10px brown;
+            }
+        }
+
+       
+        .button {
+            background-color: #4CAF50; 
+            border: none;
+            color: white; 
+            padding: 10px 20px; 
+            text-align: center;
+            text-decoration: none; 
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .listing{
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .listing img {
+            width: auto; 
+            height: auto; 
+            max-height: 200px; 
+            border-radius: 10px;
+            padding-bottom: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><b>Cbit Marketplace</b></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex box bg-body-tertiary ml-auto mr-auto" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" >
+                <a href="#" style="padding-top: 5px;margin-right: 5px;padding: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 10px; color:black;background-color: bisque;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg></a>
+              </div>
+            <ul class="navbar-nav ms-auto mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active " style="font-size: 18px;" href="#">Contact us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active "  style="font-size: 18px;" href="signin.html">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active "  style="font-size: 18px;" href="buy.html">Buy</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="sell.html"  style="font-size: 18px;"><div class="mm">Sell</div></a>
+                  </li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+      
+
+    <main class="container1">
+        <h2 style="padding-left: 15px;padding-top: 15px;">Buy Items</h2>
+        <div class="items">
+            <button class="button" onclick="showItems('textbooks')">Textbooks</button>
+            <button class="button" onclick="showItems('electronics')">Electronics</button>
+            <button class="button" onclick="showItems('furniture')">Furniture</button>
+            <button class="button" onclick="showItems('clothing')">Clothing</button>
+        </div>
+
+        <div class="item" id="textbooks">
+            <div class="listing">
+                <img src="C++.jpeg" alt="Textbook Image">
+                <p><b><u>Name:</u></b> Introduction to C++</p>
+                <p><b><u>Description:</u></b> A comprehensive guide to introductory C++ concepts.</p>
+                <p><b><u>Description:</u></b> 2,000 Rs.</p>
+                <button class="button">Buy</button>
+            </div>
+            <div class="listing">
+                <img src="python.jpg" alt="Textbook Image">
+                <p><b><u>Name:</u></b> Python for Beginners</p>
+                <p><b><u>Description:</u></b> An essential book for anyone new to PYTHON.</p>
+                <p><b><u>Price:</u></b> 2,500 Rs.</p>
+                <button class="button">Buy</button> 
+            </div>
+            <div class="listing">
+                <img src="tb.jpg" alt="Textbook Image">
+                <p><b><u>Name:</u></b> Data Structures and Algorithms</p>
+                <p><b><u>Description:</u></b> In depth explanation of all important data structures/p>
+                <p><b><u>Price:</u></b> 4,000 Rs.</p>
+                <button class="button">Buy</button> 
+            </div>
+        </div>
+
+        <div class="item" id="electronics">
+            <div class="listing">
+                <img src="Laptop - Dell XPS 15.jpeg" alt="Electronics Image">
+                <p><b><u>Name:</u></b> Laptop - Dell XPS 15</p>
+                <p><b><u>Description:</u></b> High-performance laptop with stunning display.</p>
+                <p><b><u>Price:</u></b> 1,20,000 Rs.</p>
+                <button class="button">Buy</button> 
+            </div>
+            <div class="listing">
+                <img src="Smartphone - iPhone 11.jpeg" alt="Electronics Image">
+                <p><b><u>Name:</u></b> Smartphone - iPhone 12 </p>
+                <p><b><u>Description:</u></b> Latest model with amazing audio quality.</p>
+                <p><b><u>Price:</u></b> 85,500 Rs.</p>
+                <button class="button">Buy</button> 
+            </div>
+            <div class="listing">
+                <img src="buds.webp" alt="Electronics Image">
+                <p><b><u>Name:</u></b> Boat-airdopes 131</p>
+                <p><b><u>Description:</u></b> Latest model with advanced camera features.</p>
+                <p><b><u>Price:</u></b> 9,000 Rs.</p>
+                <button class="button">Buy</button> 
+            </div>
+        </div>
+
+        <div class="item" id="furniture">
+            
+            <div class="listing">
+                <img src="Desk - IKEA Linnmon.jpeg" alt="Furniture Image">
+                <p><b><u>Name:</u></b> Desk - IKEA Linnmon</p>
+                <p><b><u>Description:</u></b> Spacious desk with storage compartments.</p>
+                <p><b><u>Price:</u></b> 6,000 Rs.</p>
+                <button class="button">Buy</button> 
+            </div>
+            <div class="listing">
+                <img src="Chair - OfficeMax Task Chair.jpeg" alt="Furniture Image">
+                <p><b><u>Name:</u></b> Chair - OfficeMax Task Chair</p>
+                <p><b><u>Description:</u></b> Comfortable chair for long study sessions.</p>
+                <p><b><u>Price:</u></b> 4,000 Rs.</p>
+                <button class="button">Buy</button> 
+            </div>
+        </div>
+
+        <div class="item" id="clothing">
+            
+            <div class="listing">
+                <img src="Jacket - North Face Thermoball.jpeg" alt="Clothing Image">
+                <p><b><u>Name:</u></b> Jacket - North Face Thermoball</p>
+                <p><b><u>Description:</u></b> Warm and lightweight jacket for outdoor activities.</p>
+                <p><b><u>Price:</u></b> 4,500 Rs.</p>
+                <button class="button">Buy</button> 
+            </div>
+            <div class="listing">
+                <img src="Shoes - Adidas Ultraboost.jpeg" alt="Clothing Image">
+                <p><b><u>Name:</u></b> Shoes - Adidas Ultraboost</p>
+                <p><b><u>Description:</u></b> Stylish and comfortable shoes for daily wear.</p>
+                <p><b><u>Price:</u></b> 34,000 Rs.</p>
+                <button class="button">Buy</button> 
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+         function showItems(category) {
+        var items = document.querySelectorAll('.item');
+        items = Array.from(items);
+        items.forEach(function(item) {
+            item.classList.remove('active');
+        });
+        var selectedCategory = document.getElementById(category);
+        selectedCategory.classList.add('active');
+    }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
